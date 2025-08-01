@@ -84,17 +84,18 @@
       }
     }
 
-    async function sendToGoogleSheets(data) {
-      try {
-        await fetch(googleSheetURL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ contents: data })
-        });
-      } catch (err) {
-        console.error("ส่งข้อมูลไป Google Sheets ไม่สำเร็จ:", err);
-      }
-    }
+   async function sendToGoogleSheets(data) {
+  try {
+    await fetch(googleSheetURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ contents: data })  // ✅ แก้ตรงนี้!
+    });
+  } catch (err) {
+    console.error("ส่งข้อมูลไป Google Sheets ไม่สำเร็จ:", err);
+  }
+}
+
 
     async function fetchLoansFromSheet() {
       try {
