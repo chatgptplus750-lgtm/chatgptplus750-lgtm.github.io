@@ -89,7 +89,7 @@
         await fetch(googleSheetURL, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data)
+          body: JSON.stringify({ contents: data })
         });
       } catch (err) {
         console.error("ส่งข้อมูลไป Google Sheets ไม่สำเร็จ:", err);
